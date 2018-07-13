@@ -73,6 +73,8 @@
 
 
 
+  
+
 
   <link rel="alternate" href="/atom.xml" title="WenchaoXiu" type="application/atom+xml" />
 
@@ -81,13 +83,27 @@
 
 
 
-<meta property="og:type" content="website">
-<meta property="og:title" content="WenchaoXiu">
-<meta property="og:url" content="http://WenchaoXiu.github.io/index.html">
+<meta name="description" content="Python包Pandas学习笔记最近对pandas做了一个系统的学习，主要参考了这套习题，方便后续进行python数据分析 1.数据的基本操作1.1 package的载入12import numpy as npimport pandas as pd 1.2 数据读取(“/”暂作“或”使用)12345# \s+是利用空白符进行分割# header可以制定列明对应的行数，如果没有就是None# in">
+<meta property="og:type" content="article">
+<meta property="og:title" content="pandas_commands">
+<meta property="og:url" content="http://WenchaoXiu.github.io/2018/07/12/pandas-commands/index.html">
 <meta property="og:site_name" content="WenchaoXiu">
+<meta property="og:description" content="Python包Pandas学习笔记最近对pandas做了一个系统的学习，主要参考了这套习题，方便后续进行python数据分析 1.数据的基本操作1.1 package的载入12import numpy as npimport pandas as pd 1.2 数据读取(“/”暂作“或”使用)12345# \s+是利用空白符进行分割# header可以制定列明对应的行数，如果没有就是None# in">
 <meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="http://wenchaoxiu.github.io/images/pandas_commands/p1.png">
+<meta property="og:image" content="http://wenchaoxiu.github.io/images/pandas_commands/p2.png">
+<meta property="og:image" content="http://wenchaoxiu.github.io/images/pandas_commands/p3.png">
+<meta property="og:image" content="http://wenchaoxiu.github.io/images/pandas_commands/p4.png">
+<meta property="og:image" content="http://wenchaoxiu.github.io/images/pandas_commands/p5.png">
+<meta property="og:image" content="http://wenchaoxiu.github.io/images/pandas_commands/p6.png">
+<meta property="og:image" content="http://wenchaoxiu.github.io/images/pandas_commands/p7.png">
+<meta property="og:image" content="http://wenchaoxiu.github.io/images/pandas_commands/p8.png">
+<meta property="og:image" content="http://wenchaoxiu.github.io/images/pandas_commands/p9.png">
+<meta property="og:updated_time" content="2018-07-13T03:44:11.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="WenchaoXiu">
+<meta name="twitter:title" content="pandas_commands">
+<meta name="twitter:description" content="Python包Pandas学习笔记最近对pandas做了一个系统的学习，主要参考了这套习题，方便后续进行python数据分析 1.数据的基本操作1.1 package的载入12import numpy as npimport pandas as pd 1.2 数据读取(“/”暂作“或”使用)12345# \s+是利用空白符进行分割# header可以制定列明对应的行数，如果没有就是None# in">
+<meta name="twitter:image" content="http://wenchaoxiu.github.io/images/pandas_commands/p1.png">
 
 
 
@@ -117,13 +133,13 @@
 
 
 
-  <link rel="canonical" href="http://WenchaoXiu.github.io/"/>
+  <link rel="canonical" href="http://WenchaoXiu.github.io/2018/07/12/pandas-commands/"/>
 
 
 
 
 
-  <title>WenchaoXiu</title>
+  <title>pandas_commands | WenchaoXiu</title>
   
 
 
@@ -142,8 +158,7 @@
     
   
 
-  <div class="container sidebar-position-left 
-  page-home">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -216,9 +231,9 @@
         <div class="content-wrap">
           <div id="content" class="content">
             
-  <section id="posts" class="posts-expand">
+
+  <div id="posts" class="posts-expand">
     
-      
 
   
 
@@ -248,9 +263,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/07/12/pandas-commands/" itemprop="url">pandas_commands</a></h1>
+          <h1 class="post-title" itemprop="name headline">pandas_commands</h1>
         
 
         <div class="post-meta">
@@ -322,9 +335,7 @@
       
 
       
-        
-          
-            <h1 id="Python包Pandas学习笔记"><a href="#Python包Pandas学习笔记" class="headerlink" title="Python包Pandas学习笔记"></a>Python包Pandas学习笔记</h1><p><strong>最近对pandas做了一个系统的学习，主要参考了这套<a href="https://github.com/guipsamora/pandas_exercises" target="_blank" rel="noopener">习题</a>，方便后续进行python数据分析</strong></p>
+        <h1 id="Python包Pandas学习笔记"><a href="#Python包Pandas学习笔记" class="headerlink" title="Python包Pandas学习笔记"></a>Python包Pandas学习笔记</h1><p><strong>最近对pandas做了一个系统的学习，主要参考了这套<a href="https://github.com/guipsamora/pandas_exercises" target="_blank" rel="noopener">习题</a>，方便后续进行python数据分析</strong></p>
 <h2 id="1-数据的基本操作"><a href="#1-数据的基本操作" class="headerlink" title="1.数据的基本操作"></a>1.数据的基本操作</h2><h3 id="1-1-package的载入"><a href="#1-1-package的载入" class="headerlink" title="1.1 package的载入"></a>1.1 package的载入</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"><span class="keyword">import</span> pandas <span class="keyword">as</span> pd</span><br></pre></td></tr></table></figure>
 <h3 id="1-2-数据读取-“-”暂作“或”使用"><a href="#1-2-数据读取-“-”暂作“或”使用" class="headerlink" title="1.2 数据读取(“/”暂作“或”使用)"></a>1.2 数据读取(“/”暂作“或”使用)</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># \s+是利用空白符进行分割</span></span><br><span class="line"><span class="comment"># header可以制定列明对应的行数，如果没有就是None</span></span><br><span class="line"><span class="comment"># index_col就是行名对应的列数，如果没有也是None</span></span><br><span class="line">pd.read_csv(path, sep=<span class="string">'\s+'</span>/<span class="string">'\t'</span>/<span class="string">','</span>, header=<span class="number">0</span>/<span class="keyword">None</span>, </span><br><span class="line">	index_col=<span class="number">0</span>/<span class="keyword">None</span>, encoding=<span class="string">'utf-8'</span>)</span><br></pre></td></tr></table></figure>
 <h3 id="1-3-数据输出"><a href="#1-3-数据输出" class="headerlink" title="1.3 数据输出"></a>1.3 数据输出</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># na_rep是填充的缺失值</span></span><br><span class="line"><span class="comment"># header可以给一个list用作数据输出的列名</span></span><br><span class="line"><span class="comment"># columns可以给定数字list用于选取输出特定的列</span></span><br><span class="line">pd.to_csv(path, sep=<span class="string">''</span>, na_rep=<span class="string">'NA'</span>, header=<span class="keyword">True</span>/[<span class="string">'xx'</span>,<span class="string">'xx'</span>], index=<span class="keyword">True</span>, </span><br><span class="line">	columns=[<span class="number">1</span>,<span class="number">2</span>,<span class="number">3.</span>.], encoding=<span class="string">'utf-8'</span>)</span><br></pre></td></tr></table></figure>
@@ -357,8 +368,6 @@
 <h3 id="2-9-分类boxplot点图"><a href="#2-9-分类boxplot点图" class="headerlink" title="2.9 分类boxplot点图"></a>2.9 分类boxplot点图</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sns.stripplot(x=<span class="string">''</span>, y=<span class="string">''</span>, data=df, hue=<span class="string">'sex'</span>, jitter=<span class="keyword">True</span>) </span><br><span class="line"><span class="comment"># 绘制类似于boxplot的图，只不过画的是每个box里面的点, x轴是不同数据类</span></span><br></pre></td></tr></table></figure>
 <p><img src="/images/pandas_commands/p9.png" alt="p9"></p>
 
-          
-        
       
     </div>
     
@@ -375,136 +384,28 @@
       
 
       
-
-      
-
       
       
-        <div class="post-eof"></div>
+
       
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://WenchaoXiu.github.io/2018/07/12/firstblog_hexo/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="WenchaoXiu">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="WenchaoXiu">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/07/12/firstblog_hexo/" itemprop="url">hexo command</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
             
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-07-12T16:07:52+08:00">
-                2018-07-12
-              </time>
+              <a href="/2018/07/12/firstblog_hexo/" rel="next" title="hexo command">
+                <i class="fa fa-chevron-left"></i> hexo command
+              </a>
             
+          </div>
 
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
             
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
+          </div>
         </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
       
 
       
-        
-          hexo command
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2018/07/12/firstblog_hexo/">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
       
     </footer>
   </div>
@@ -514,10 +415,11 @@
   </article>
 
 
-    
-  </section>
 
-  
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
 
           </div>
@@ -525,6 +427,10 @@
 
 
           
+
+  
+
+
 
         </div>
         
@@ -545,8 +451,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -608,6 +523,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Python包Pandas学习笔记"><span class="nav-number">1.</span> <span class="nav-text">Python包Pandas学习笔记</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-数据的基本操作"><span class="nav-number">1.1.</span> <span class="nav-text">1.数据的基本操作</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-1-package的载入"><span class="nav-number">1.1.1.</span> <span class="nav-text">1.1 package的载入</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-2-数据读取-“-”暂作“或”使用"><span class="nav-number">1.1.2.</span> <span class="nav-text">1.2 数据读取(“/”暂作“或”使用)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-3-数据输出"><span class="nav-number">1.1.3.</span> <span class="nav-text">1.3 数据输出</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-4-创建DataFrame-Series对象"><span class="nav-number">1.1.4.</span> <span class="nav-text">1.4 创建DataFrame,Series对象</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-5-数据类型总结"><span class="nav-number">1.1.5.</span> <span class="nav-text">1.5 数据类型总结</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-6查看数据"><span class="nav-number">1.1.6.</span> <span class="nav-text">1.6查看数据</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-7数据的截取"><span class="nav-number">1.1.7.</span> <span class="nav-text">1.7数据的截取</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-8数据清洗"><span class="nav-number">1.1.8.</span> <span class="nav-text">1.8数据清洗</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-9数据分组"><span class="nav-number">1.1.9.</span> <span class="nav-text">1.9数据分组</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-10-数据合并"><span class="nav-number">1.1.10.</span> <span class="nav-text">1.10 数据合并</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-数据特殊操作"><span class="nav-number">1.2.</span> <span class="nav-text">2.数据特殊操作</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#2-1-div的用法"><span class="nav-number">1.2.1.</span> <span class="nav-text">2.1 div的用法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-2-时序数据操作"><span class="nav-number">1.2.2.</span> <span class="nav-text">2.2 时序数据操作</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-绘图命令以各种类型图分类"><span class="nav-number">1.3.</span> <span class="nav-text">2.绘图命令以各种类型图分类</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#2-1-barplot"><span class="nav-number">1.3.1.</span> <span class="nav-text">2.1 barplot</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-2-scatter-plot"><span class="nav-number">1.3.2.</span> <span class="nav-text">2.2 scatter plot</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-3-pie-chart"><span class="nav-number">1.3.3.</span> <span class="nav-text">2.3 pie chart</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-4-分组scatter-plot"><span class="nav-number">1.3.4.</span> <span class="nav-text">2.4 分组scatter plot</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-5-histgram"><span class="nav-number">1.3.5.</span> <span class="nav-text">2.5 histgram</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-6-correlation-plot"><span class="nav-number">1.3.6.</span> <span class="nav-text">2.6 correlation plot</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-7-pairwise散点图"><span class="nav-number">1.3.7.</span> <span class="nav-text">2.7 pairwise散点图</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-8-分类boxplot图"><span class="nav-number">1.3.8.</span> <span class="nav-text">2.8 分类boxplot图</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-9-分类boxplot点图"><span class="nav-number">1.3.9.</span> <span class="nav-text">2.9 分类boxplot点图</span></a></li></ol></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -735,6 +666,10 @@
   
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
 
   
 
