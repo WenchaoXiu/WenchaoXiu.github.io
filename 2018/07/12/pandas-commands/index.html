@@ -99,7 +99,7 @@
 <meta property="og:image" content="http://wenchaoxiu.github.io/images/pandas_commands/p7.png">
 <meta property="og:image" content="http://wenchaoxiu.github.io/images/pandas_commands/p8.png">
 <meta property="og:image" content="http://wenchaoxiu.github.io/images/pandas_commands/p9.png">
-<meta property="og:updated_time" content="2018-07-13T03:48:08.000Z">
+<meta property="og:updated_time" content="2018-07-13T03:49:57.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="pandas_commands">
 <meta name="twitter:description" content="Python包Pandas学习笔记">
@@ -339,8 +339,7 @@
       
 
       
-        <p class="description">记录一下如何使用pandas</p>
-
+        <p></p><p class="description">记录一下如何使用pandas</p><br><a id="more"></a><p></p>
 <h1 id="Python包Pandas学习笔记"><a href="#Python包Pandas学习笔记" class="headerlink" title="Python包Pandas学习笔记"></a>Python包Pandas学习笔记</h1><p><strong>最近对pandas做了一个系统的学习，主要参考了这套<a href="https://github.com/guipsamora/pandas_exercises" target="_blank" rel="noopener">习题</a>，方便后续进行python数据分析</strong></p>
 <h2 id="1-数据的基本操作"><a href="#1-数据的基本操作" class="headerlink" title="1.数据的基本操作"></a>1.数据的基本操作</h2><h3 id="1-1-package的载入"><a href="#1-1-package的载入" class="headerlink" title="1.1 package的载入"></a>1.1 package的载入</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"><span class="keyword">import</span> pandas <span class="keyword">as</span> pd</span><br></pre></td></tr></table></figure>
 <h3 id="1-2-数据读取-“-”暂作“或”使用"><a href="#1-2-数据读取-“-”暂作“或”使用" class="headerlink" title="1.2 数据读取(“/”暂作“或”使用)"></a>1.2 数据读取(“/”暂作“或”使用)</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># \s+是利用空白符进行分割</span></span><br><span class="line"><span class="comment"># header可以制定列明对应的行数，如果没有就是None</span></span><br><span class="line"><span class="comment"># index_col就是行名对应的列数，如果没有也是None</span></span><br><span class="line">pd.read_csv(path, sep=<span class="string">'\s+'</span>/<span class="string">'\t'</span>/<span class="string">','</span>, header=<span class="number">0</span>/<span class="keyword">None</span>, </span><br><span class="line">	index_col=<span class="number">0</span>/<span class="keyword">None</span>, encoding=<span class="string">'utf-8'</span>)</span><br></pre></td></tr></table></figure>
@@ -373,6 +372,25 @@
 <p><img src="/images/pandas_commands/p8.png" alt="p8"></p>
 <h3 id="2-9-分类boxplot点图"><a href="#2-9-分类boxplot点图" class="headerlink" title="2.9 分类boxplot点图"></a>2.9 分类boxplot点图</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sns.stripplot(x=<span class="string">''</span>, y=<span class="string">''</span>, data=df, hue=<span class="string">'sex'</span>, jitter=<span class="keyword">True</span>) </span><br><span class="line"><span class="comment"># 绘制类似于boxplot的图，只不过画的是每个box里面的点, x轴是不同数据类</span></span><br></pre></td></tr></table></figure>
 <p><img src="/images/pandas_commands/p9.png" alt="p9"></p>
+<hr>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
       
     </div>
