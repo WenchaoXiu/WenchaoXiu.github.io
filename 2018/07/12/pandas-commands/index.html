@@ -85,7 +85,7 @@
 
 <meta name="description" content="Python包Pandas学习笔记">
 <meta property="og:type" content="article">
-<meta property="og:title" content="pandas_commands">
+<meta property="og:title" content="pandas 常用命令笔记">
 <meta property="og:url" content="http://WenchaoXiu.github.io/2018/07/12/pandas-commands/index.html">
 <meta property="og:site_name" content="WenchaoXiu">
 <meta property="og:description" content="Python包Pandas学习笔记">
@@ -99,9 +99,9 @@
 <meta property="og:image" content="http://wenchaoxiu.github.io/images/pandas_commands/p7.png">
 <meta property="og:image" content="http://wenchaoxiu.github.io/images/pandas_commands/p8.png">
 <meta property="og:image" content="http://wenchaoxiu.github.io/images/pandas_commands/p9.png">
-<meta property="og:updated_time" content="2018-07-13T03:49:57.000Z">
+<meta property="og:updated_time" content="2018-07-17T01:39:26.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="pandas_commands">
+<meta name="twitter:title" content="pandas 常用命令笔记">
 <meta name="twitter:description" content="Python包Pandas学习笔记">
 <meta name="twitter:image" content="http://wenchaoxiu.github.io/images/pandas_commands/p1.png">
 
@@ -139,7 +139,7 @@
 
 
 
-  <title>pandas_commands | WenchaoXiu</title>
+  <title>pandas 常用命令笔记 | WenchaoXiu</title>
   
 
 
@@ -263,7 +263,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">pandas_commands</h1>
+          <h1 class="post-title" itemprop="name headline">pandas 常用命令笔记</h1>
         
 
         <div class="post-meta">
@@ -342,7 +342,7 @@
         <p></p><p class="description">记录一下如何使用pandas</p><br><a id="more"></a><p></p>
 <h1 id="Python包Pandas学习笔记"><a href="#Python包Pandas学习笔记" class="headerlink" title="Python包Pandas学习笔记"></a>Python包Pandas学习笔记</h1><p><strong>最近对pandas做了一个系统的学习，主要参考了这套<a href="https://github.com/guipsamora/pandas_exercises" target="_blank" rel="noopener">习题</a>，方便后续进行python数据分析</strong></p>
 <h2 id="1-数据的基本操作"><a href="#1-数据的基本操作" class="headerlink" title="1.数据的基本操作"></a>1.数据的基本操作</h2><h3 id="1-1-package的载入"><a href="#1-1-package的载入" class="headerlink" title="1.1 package的载入"></a>1.1 package的载入</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"><span class="keyword">import</span> pandas <span class="keyword">as</span> pd</span><br></pre></td></tr></table></figure>
-<h3 id="1-2-数据读取-“-”暂作“或”使用"><a href="#1-2-数据读取-“-”暂作“或”使用" class="headerlink" title="1.2 数据读取(“/”暂作“或”使用)"></a>1.2 数据读取(“/”暂作“或”使用)</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># \s+是利用空白符进行分割</span></span><br><span class="line"><span class="comment"># header可以制定列明对应的行数，如果没有就是None</span></span><br><span class="line"><span class="comment"># index_col就是行名对应的列数，如果没有也是None</span></span><br><span class="line">pd.read_csv(path, sep=<span class="string">'\s+'</span>/<span class="string">'\t'</span>/<span class="string">','</span>, header=<span class="number">0</span>/<span class="keyword">None</span>, </span><br><span class="line">	index_col=<span class="number">0</span>/<span class="keyword">None</span>, encoding=<span class="string">'utf-8'</span>)</span><br></pre></td></tr></table></figure>
+<h3 id="1-2-数据读取-“-”暂作“或”使用"><a href="#1-2-数据读取-“-”暂作“或”使用" class="headerlink" title="1.2 数据读取(“/”暂作“或”使用)"></a>1.2 数据读取(“/”暂作“或”使用)</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># \s+是利用空白符进行分割</span></span><br><span class="line"><span class="comment"># header可以制定列明对应的行数，如果没有就是None</span></span><br><span class="line"><span class="comment"># index_col就是行名对应的列数，如果没有也是None</span></span><br><span class="line"><span class="comment"># names是给定的列名</span></span><br><span class="line">pd.read_csv(path, sep=<span class="string">'\s+'</span>/<span class="string">'\t'</span>/<span class="string">','</span>, header=<span class="number">0</span>/<span class="keyword">None</span>, </span><br><span class="line">	index_col=<span class="number">0</span>/<span class="keyword">None</span>, encoding=<span class="string">'utf-8'</span>, names=[...])</span><br></pre></td></tr></table></figure>
 <h3 id="1-3-数据输出"><a href="#1-3-数据输出" class="headerlink" title="1.3 数据输出"></a>1.3 数据输出</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># na_rep是填充的缺失值</span></span><br><span class="line"><span class="comment"># header可以给一个list用作数据输出的列名</span></span><br><span class="line"><span class="comment"># columns可以给定数字list用于选取输出特定的列</span></span><br><span class="line">pd.to_csv(path, sep=<span class="string">''</span>, na_rep=<span class="string">'NA'</span>, header=<span class="keyword">True</span>/[<span class="string">'xx'</span>,<span class="string">'xx'</span>], index=<span class="keyword">True</span>, </span><br><span class="line">	columns=[<span class="number">1</span>,<span class="number">2</span>,<span class="number">3.</span>.], encoding=<span class="string">'utf-8'</span>)</span><br></pre></td></tr></table></figure>
 <h3 id="1-4-创建DataFrame-Series对象"><a href="#1-4-创建DataFrame-Series对象" class="headerlink" title="1.4 创建DataFrame,Series对象"></a>1.4 创建DataFrame,Series对象</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># DataFrame和Series都接受list和numpy array数据，若要转换回array可以用df.values或S.values</span></span><br><span class="line"><span class="comment"># DataFrame还可以接受dictionary对象</span></span><br><span class="line">df = pd.DataFrame(np.random.rand(<span class="number">10</span>,<span class="number">5</span>), columns=list(<span class="string">'ABCDE'</span>)) <span class="comment">#列名为ABCDE</span></span><br><span class="line">S = pd.Series([<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>])</span><br></pre></td></tr></table></figure>
 <h3 id="1-5-数据类型总结"><a href="#1-5-数据类型总结" class="headerlink" title="1.5 数据类型总结"></a>1.5 数据类型总结</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">df = pd.DataFrame(&#123;<span class="string">'string'</span>: list(<span class="string">'abc'</span>),</span><br><span class="line">                   <span class="string">'int64'</span>: list(range(<span class="number">1</span>, <span class="number">4</span>)),</span><br><span class="line">                   <span class="string">'uint8'</span>: np.arange(<span class="number">3</span>, <span class="number">6</span>).astype(<span class="string">'u1'</span>),</span><br><span class="line">                   <span class="string">'float64'</span>: np.arange(<span class="number">4.0</span>, <span class="number">7.0</span>),</span><br><span class="line">                   <span class="string">'bool1'</span>: [<span class="keyword">True</span>, <span class="keyword">False</span>, <span class="keyword">True</span>],</span><br><span class="line">                   <span class="string">'bool2'</span>: [<span class="keyword">False</span>, <span class="keyword">True</span>, <span class="keyword">False</span>],</span><br><span class="line">                   <span class="string">'dates'</span>: pd.date_range(<span class="string">'now'</span>, periods=<span class="number">3</span>).values,</span><br><span class="line">                   <span class="string">'category'</span>: pd.Series(list(<span class="string">"ABC"</span>)).astype(<span class="string">'category'</span>)&#125;)</span><br><span class="line">S.astype(np.int64) <span class="comment"># 数据类型转化</span></span><br><span class="line">S.dtype == np.int64 <span class="comment"># 数据类型判断</span></span><br><span class="line">S.to_frame() <span class="comment"># 将Series数据转换为DataFrame数据</span></span><br><span class="line">pd.to_datetime(df.a) <span class="comment"># 将df数据a列转换为datetime类型</span></span><br></pre></td></tr></table></figure>
