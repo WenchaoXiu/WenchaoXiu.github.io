@@ -88,7 +88,7 @@
 <meta property="og:site_name" content="WenchaoXiu">
 <meta property="og:description" content="对葫芦书中一些算法题进行总结">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-07-03T09:59:47.000Z">
+<meta property="og:updated_time" content="2019-07-03T10:00:48.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="葫芦书读书笔记">
 <meta name="twitter:description" content="对葫芦书中一些算法题进行总结">
@@ -309,6 +309,7 @@
 
 <a id="more"></a>
 <h2 id="1-为什么需要对数值特征进行归一化"><a href="#1-为什么需要对数值特征进行归一化" class="headerlink" title="1. 为什么需要对数值特征进行归一化"></a>1. 为什么需要对数值特征进行归一化</h2><figure class="highlight sqf"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">为了方便后续进行梯度下降的时候加速收敛</span><br><span class="line">归一化通常主要分为两种：<span class="built_in">min</span>-<span class="built_in">max</span>，Z-<span class="built_in">Score</span></span><br><span class="line">需要进行归一化的模型：线性回归，LR，SVM，神经网络</span><br><span class="line">树模型不需要进行归一化，因为叶节点生成不涉及到梯度下降</span><br></pre></td></tr></table></figure>
+<h2 id="2-数据预处理时，如何处理类别特征"><a href="#2-数据预处理时，如何处理类别特征" class="headerlink" title="2. 数据预处理时，如何处理类别特征"></a>2. 数据预处理时，如何处理类别特征</h2><figure class="highlight livecodeserver"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">序列编码：类别特征有大小区别</span><br><span class="line"><span class="literal">one</span>-hot编码：特征的每个值作为一列</span><br><span class="line">二进制编码：将类别映射为二进制数字</span><br><span class="line"><span class="literal">one</span>-hot编码可能会导致维度灾难，过拟合</span><br></pre></td></tr></table></figure>
 <hr>
 
       
@@ -480,7 +481,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-为什么需要对数值特征进行归一化"><span class="nav-number">1.</span> <span class="nav-text">1. 为什么需要对数值特征进行归一化</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-为什么需要对数值特征进行归一化"><span class="nav-number">1.</span> <span class="nav-text">1. 为什么需要对数值特征进行归一化</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-数据预处理时，如何处理类别特征"><span class="nav-number">2.</span> <span class="nav-text">2. 数据预处理时，如何处理类别特征</span></a></li></ol></div>
             
 
           </div>
