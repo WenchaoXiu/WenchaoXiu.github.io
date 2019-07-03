@@ -88,7 +88,7 @@
 <meta property="og:site_name" content="WenchaoXiu">
 <meta property="og:description" content="对葫芦书中一些算法题进行总结">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-07-03T10:07:39.000Z">
+<meta property="og:updated_time" content="2019-07-03T10:09:57.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="葫芦书读书笔记">
 <meta name="twitter:description" content="对葫芦书中一些算法题进行总结">
@@ -330,6 +330,24 @@
     - 减少模型复杂度
     - 增加正则化，drop-out
 - 迁移学习
+</code></pre><h2 id="8-评估指标有哪些？"><a href="#8-评估指标有哪些？" class="headerlink" title="8. 评估指标有哪些？"></a>8. 评估指标有哪些？</h2><pre><code>- 准确率，精确率，召回率,PR,ROC
+    - 准确率: (TP+TF)/(P+F)
+    - 精确率: TP/P
+    - 召回率: TP/T
+    - PR曲线就是横坐标为召回率纵坐标为精确率
+    - ROC曲线是以假阳性率为横坐标真阳性率为纵坐标的曲线
+        - TPR = TP/P
+        - FPR = FP/N
+    - 绘制ROC根据PN样本数，从(0,0)开始，每遇到一个正样本纵轴加1/P,反之横轴加1/N
+- PR曲线和ROC曲线的差别
+    - 当正负样本比例变化的时候ROC影响比较小，PR影响大
+</code></pre><h2 id="9-什么场景下使用余弦相似度而不是欧氏距离？"><a href="#9-什么场景下使用余弦相似度而不是欧氏距离？" class="headerlink" title="9. 什么场景下使用余弦相似度而不是欧氏距离？"></a>9. 什么场景下使用余弦相似度而不是欧氏距离？</h2><pre><code>- 关注于角度而不是绝对距离的时候使用余弦相似度，比如文本内容相近，但是长度差距大时
+- 欧式距离则更关注绝对差异，当用户活跃度以及登录次数分别为(1,10),(10,100)不能用余弦相似度
+</code></pre><p>##10. 余弦距离是否是一个严格的距离定义？</p>
+<pre><code>- 余弦距离是 d = 1-cos&lt;A,B&gt;
+- 满足正定型d&gt;0
+- 满足对称性
+- 但是不满足三角不等式(0,1),(1,1),(1,0)就是个反例
 </code></pre><hr>
 
       
@@ -501,7 +519,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-为什么需要对数值特征进行归一化"><span class="nav-number">1.</span> <span class="nav-text">1. 为什么需要对数值特征进行归一化</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-数据预处理时，如何处理类别特征"><span class="nav-number">2.</span> <span class="nav-text">2. 数据预处理时，如何处理类别特征</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-推荐算法中-如何解决高维度组合特征参数多问题？"><span class="nav-number">3.</span> <span class="nav-text">3. 推荐算法中,如何解决高维度组合特征参数多问题？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-如何找到有效的组合特征？"><span class="nav-number">4.</span> <span class="nav-text">4. 如何找到有效的组合特征？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-文本表示模型有哪些，各自优缺点？"><span class="nav-number">5.</span> <span class="nav-text">5. 文本表示模型有哪些，各自优缺点？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#6-Word2Vec是什么以及和LDA有什么区别"><span class="nav-number">6.</span> <span class="nav-text">6. Word2Vec是什么以及和LDA有什么区别</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#7-图像分类中，如果训练数据不足如何解决？"><span class="nav-number">7.</span> <span class="nav-text">7. 图像分类中，如果训练数据不足如何解决？</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-为什么需要对数值特征进行归一化"><span class="nav-number">1.</span> <span class="nav-text">1. 为什么需要对数值特征进行归一化</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-数据预处理时，如何处理类别特征"><span class="nav-number">2.</span> <span class="nav-text">2. 数据预处理时，如何处理类别特征</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-推荐算法中-如何解决高维度组合特征参数多问题？"><span class="nav-number">3.</span> <span class="nav-text">3. 推荐算法中,如何解决高维度组合特征参数多问题？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-如何找到有效的组合特征？"><span class="nav-number">4.</span> <span class="nav-text">4. 如何找到有效的组合特征？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-文本表示模型有哪些，各自优缺点？"><span class="nav-number">5.</span> <span class="nav-text">5. 文本表示模型有哪些，各自优缺点？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#6-Word2Vec是什么以及和LDA有什么区别"><span class="nav-number">6.</span> <span class="nav-text">6. Word2Vec是什么以及和LDA有什么区别</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#7-图像分类中，如果训练数据不足如何解决？"><span class="nav-number">7.</span> <span class="nav-text">7. 图像分类中，如果训练数据不足如何解决？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#8-评估指标有哪些？"><span class="nav-number">8.</span> <span class="nav-text">8. 评估指标有哪些？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#9-什么场景下使用余弦相似度而不是欧氏距离？"><span class="nav-number">9.</span> <span class="nav-text">9. 什么场景下使用余弦相似度而不是欧氏距离？</span></a></li></ol></div>
             
 
           </div>
