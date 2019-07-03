@@ -1,0 +1,904 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="ML, Python, R, Algorithms" />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="WenchaoXiu" type="application/atom+xml" />
+
+
+
+
+
+
+<meta name="description" content="python基本语法总结">
+<meta property="og:type" content="article">
+<meta property="og:title" content="python学习笔记">
+<meta property="og:url" content="http://WenchaoXiu.github.io/2018/10/01/PythonStudy/index.html">
+<meta property="og:site_name" content="WenchaoXiu">
+<meta property="og:description" content="python基本语法总结">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2019-07-03T15:12:41.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="python学习笔记">
+<meta name="twitter:description" content="python基本语法总结">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://WenchaoXiu.github.io/2018/10/01/PythonStudy/"/>
+
+
+
+
+
+  <title>python学习笔记 | WenchaoXiu</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">WenchaoXiu</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">just try blog</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://WenchaoXiu.github.io/2018/10/01/PythonStudy/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="WenchaoXiu">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/head.jpeg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="WenchaoXiu">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">python学习笔记</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-10-01T21:50:50+08:00">
+                2018-10-01
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/python/" itemprop="url" rel="index">
+                    <span itemprop="name">python</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+              <div class="post-description">
+                  python基本语法总结
+              </div>
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p class="description"></p>
+
+<a id="more"></a>
+<h2 id="conda环境以及包管理"><a href="#conda环境以及包管理" class="headerlink" title="conda环境以及包管理"></a>conda环境以及包管理</h2><pre><code>conda list # 查看所在环境的安装的包
+conda upgrade --all # 对包进行更新
+spyder # 启动anaconda中的IDE
+conda install numpy pandas # 在某个环境下能够安装某些Python包
+conda install numpy=1.10 # 安装特定版本的包
+conda remove &lt; package_name &gt; # 删除包
+conda env list # 列出当前机器上创建的虚拟环境
+conda create -n env1 python=2.7 # 创建一个名为env1的环境然后在其中安装python2.7
+conda create -n env1 numpy # 创建一个名为env1的环境然后在其中安装numpy
+source activate env1 # 进入env1虚拟环境，在window上不用加source
+source deactivate # 离开环境
+conda install -n py27 ipykernel # 在虚拟环境py27下安装ipykernel
+python -m ipykernel install --user --name py27 --display-name &quot;python2&quot; # 在py27环境内安装ipykernel并在菜单里命名为python2
+conda env remove -n py27 # 移除py27的虚拟环境
+conda install jupyter notebook # 在conda环境中安装jupyter notebook
+%matplotlib # jupyter notebook中已交互式方式实现matplotlib的绘图
+%matplotlib inline # 不跳出，直接内嵌在web中
+</code></pre><h2 id="注释"><a href="#注释" class="headerlink" title="注释"></a>注释</h2><pre><code>\用于一行执行太长，换行的使用
+三个单引号或者三个双引号多行注释
+</code></pre><h2 id="变量"><a href="#变量" class="headerlink" title="变量"></a>变量</h2><pre><code>print(type(变量)) # 确定变量类型
+命名规则：驼峰命名法，下划线命名法
+import keyword
+print(keyword.kwlist) # 打印相应的关键字
+</code></pre><h2 id="运算符"><a href="#运算符" class="headerlink" title="运算符"></a>运算符</h2><pre><code>// # 运算取整
+/ # 正常除
+% # 取余
+** # 幂运算
+and,or,not # 逻辑运算符
+运算符优先级：幂运算，算术运算，比较运算，逻辑运算
+</code></pre><h2 id="数据类型（强类型）"><a href="#数据类型（强类型）" class="headerlink" title="数据类型（强类型）"></a>数据类型（强类型）</h2><pre><code>类型
+    number
+        int
+        float
+        complex
+    boolean
+    String
+    List
+    Tuple
+    Dictionary
+类型转换
+    int(a)
+    str(a)
+    eval(x) ？？？
+    tuple(x)
+    list(x)
+    chr(x) # 整数转换为字符
+</code></pre><h2 id="输入输出操作"><a href="#输入输出操作" class="headerlink" title="输入输出操作"></a>输入输出操作</h2><pre><code>f=open(&quot;xxx.txt&quot;,&apos;r&apos;) # 这里f是一个句柄，有上限
+print(,end=&apos;&apos;) # 不换行
+f.readlines() # 读取并存储为list
+f.readline() # 逐行读取
+with # 打开文件，不用关心close
+with open() as f: # f是个句柄
+</code></pre><h2 id="CSV处理"><a href="#CSV处理" class="headerlink" title="CSV处理"></a>CSV处理</h2><pre><code>import csv
+f = open(&quot;xxx.csv&quot;)
+reader = csv.reader(f) # 映射到list类型
+reader[2][4]
+
+with open(&quot;&quot;,&apos;w&apos;,newline=&apos;&apos;) as f:
+    writer = csv.writer(f)
+    for row in data: # data 是个list
+        writer.writerow(row)
+
+csv.Dictreader() # 转化成字典
+writer = csv.DictWriter(f, header); writer.writeheader() # 写好头行
+writer.writerows(datas) # datas是一个字典全部写进去
+</code></pre><h2 id="列表"><a href="#列表" class="headerlink" title="列表"></a>列表</h2><pre><code>列表中的元素可以类型不同
+列表修改
+    append/insert/+/extend
+    lista.insert(1,[213,13,31,1341]) # 指定位置
+    lista.extend(listb) # 类似于+对lista进行修改
+    del lista[1] # 删除具体位置的元素
+    lista.remove(&quot;xxx&quot;) # 删除第一个匹配的元素xxx
+    lista.remove([&quot;xxx&quot;,&quot;yyy&quot;]) # 删除第一个匹配的list[&quot;xxx&quot;,&quot;yyy&quot;]
+    list.pop() # 删除指定位置的元素
+切片
+    步长[::2]
+    [-1::-2] # 最后一个数字开始向前隔一个取元素
+in/not in 
+排序
+    lista.sort(reverse=True) # 对列表排序
+倒序
+    lista.reverse() # 把列表倒过来
+count
+    lista.count(1) # 统计某个元素在列表中出现的个数，没有返回0
+索引
+    lista.index(&quot;xxx&quot;) # 返回某数的索引
+range
+    range(0,-10,-1) # 获得0,-1...,-9
+</code></pre><h2 id="列表推倒式"><a href="#列表推倒式" class="headerlink" title="列表推倒式"></a>列表推倒式</h2><pre><code>[i for i in range(30) if 1%2==0] # 取0-29之间偶数
+[function(i) for i in range(30) if 1%2==0] # function可以自己定义
+[ x**2 if x%2 ==0 else x**3 for x in range(10)] # 两个条件
+</code></pre><h2 id="字符串"><a href="#字符串" class="headerlink" title="字符串"></a>字符串</h2><pre><code>str.islower() # 判断字符串是否由小写字母组成
+&quot;{}:{}&quot;.format(&quot;x&quot;,&quot;y&quot;) # 字符串格式化
+&quot;{1}:{0}&quot;.format(&quot;x&quot;,&quot;y&quot;) # 可以给定对应的参数
+&quot;{0:.3}&quot;.format(1/3) # 对精度进行控制的时候可以加一个冒号后面加精度
+&quot;{0:7}{1:7}&quot;.format(&quot;xxx&quot;,&quot;dddd&quot;) # 对于字符串来说用多长位置对其进行保留在冒号后面，对应参数是放在前面的
+print(s.dir()) # 字符串方法
+</code></pre><h2 id="元组"><a href="#元组" class="headerlink" title="元组"></a>元组</h2><pre><code>顺序存储相同
+不可添加修改删除
+() # 空元祖
+a = 1,2,3 # 可省略小括号
+</code></pre><h2 id="集合"><a href="#集合" class="headerlink" title="集合"></a>集合</h2><pre><code>无序存储，不重复，可以不同类型
+s = {1,2,3,&quot;3&quot;}
+set(&quot;hello&quot;) # 直接把每个字符当做元素
+set() # 创建一个集合
+s.add() # 添加元素
+s.update() # 添加一个列表，集合，也可以添加多个
+remove() # 删除元素，不存在会抛异常
+discard() # 删除元素
+pop() # 随机删除
+clear() # 清空集合
+intersection或者&amp;对集合求交
+union或者|对集合求并集
+difference(-)对集合求差集
+对称差集^ # 对称差集就是
+</code></pre><h2 id="字典"><a href="#字典" class="headerlink" title="字典"></a>字典</h2><pre><code>key重复的时候后面的会被覆盖
+adic.get(&apos;xx&apos;) # 如果不存在xx对应的值，那么会返回None
+adic.get(&apos;xx&apos;, &apos;100&apos;) # 如果不存在xx对应的值，那么会返回100
+keys(),values(),iteritems() # 遍历key，value，key/value
+items() # 返回时一个tuple
+for k,v in adic.items() # 遍历
+adic.clear() # 清空字典
+</code></pre><h2 id="函数"><a href="#函数" class="headerlink" title="函数"></a>函数</h2><pre><code>global # 全局变量,命名的时候可以在命名之前加g_方便说明识别全局变量
+变量要在调用之前声明，不用定义之前声明
+list和dictionary不需要加global声明在函数内可改
+如果返回值是元组或者列表，可以用多个变量进行接收
+如果返回4个，但是只接收3个，最后一个要使用_作为占位符
+</code></pre><h2 id="匿名函数"><a href="#匿名函数" class="headerlink" title="匿名函数"></a>匿名函数</h2><pre><code>lambda [参数列表]:表达式
+例如: sum = lambda x,y:x+y # 可以有多个参数,返回只能有一个式子
+可以作为一个函数的参数赋给另外一个参数
+当然普通函数也可以作为参数传入
+a = [{&apos;name&apos;:&apos;ss&apos;,&apos;age&apos;:10},{&apos;name&apos;:&apos;yy&apos;,&apos;age&apos;:7},{&apos;name&apos;:&apos;zz&apos;,&apos;age&apos;:15}] # 将匿名函数作为参数传入第三方函数的参数
+a.sort(key=lambda x:x[&apos;age&apos;]) # sort方法需要传入一个key，这个key可以作为排序依据，lambda可以提取每个元素，并对元素排列
+a.sort(key=lambda x:x[&apos;age&apos;]， reverse=True) # 降序
+</code></pre><h2 id="面向对象基础"><a href="#面向对象基础" class="headerlink" title="面向对象基础"></a>面向对象基础</h2><pre><code>类名一般是大驼峰惯例
+构造方法__init__
+类属性和实例属性(self.xx)
+self.__name # 私有属性，不能够在外部访问
+私有方法，只能类内部进行调用,__进行声明，内部调用的时候用self.__xxx()
+</code></pre><h2 id="异常处理"><a href="#异常处理" class="headerlink" title="异常处理"></a>异常处理</h2><pre><code>异常发生之后后面的代码都不会执行
+程序主动raise Exception(&apos;test&apos;)可以抛出异常
+try 
+except
+捕获多个异常 except (aaa,bbb) as err:
+</code></pre><h2 id="包模块"><a href="#包模块" class="headerlink" title="包模块"></a>包模块</h2><pre><code>包是一个文件夹
+模块是不同的python文件
+import package.module.func()
+import package1.module1, package2.module1 # 多个模块调用
+import package1.module1 as p1m1 # 对模块进行重命名使用
+from package.module import func1 # 调用某个包某个模块的某个函数
+import sys;sys.path # 搜索模块路径，包含当前文件夹
+package.module.__file__ # 可以确定当前的模块所在的路径
+__init__.py  #在包被加载的时候，会被执行。在一个包下面可以有也可以没有__init__.py
+from package import * # 引用包下面所有的模块都加载，自动搜索是不会发生的，
+    需要我们在__init__.py下进行定义才可以实现,定义的内容是__all__=[&quot;module1&quot;,&quot;module2&quot;],
+    将package下的module1和module2都加载进来
+    如果想直接加载某个函数，在__init__.py里面加入from .module1 import func1, __all__=[&quot;func1&quot;]
+    这样修改完之后，可以直接from package import *，然后直接调用func1即可，不用带package.module
+    restart kernel
+如果想要直接引用包,如：import package,这样的话，需要一定要有__init__.py，否则会在打印package.__file__的时候报错。
+注意import package和from package import *效果相同
+</code></pre><h2 id="main"><a href="#main" class="headerlink" title="main"></a>main</h2><pre><code>if __main__==&apos;__main__&apos;: # 这个py文件以python命令调用的时候被执行，模块导入的方式是不能执行的
+使用场景就是自己进行测试时使用，当第三方调用时不会执行
+</code></pre><h2 id="zip"><a href="#zip" class="headerlink" title="zip"></a>zip</h2><pre><code>c = list(zip(a,b))
+c = set(zip(a,b))
+c = dict(zip(a,b))
+list(zip(*c)) # 解压
+</code></pre><h2 id="enumerate"><a href="#enumerate" class="headerlink" title="enumerate"></a>enumerate</h2><pre><code>enumerate(list/set, start=0) # 遍历元素，start指定从哪个数字作为开始下标
+</code></pre><h2 id="random"><a href="#random" class="headerlink" title="random"></a>random</h2><pre><code>import random #引入
+random.random() # 0-1
+random.uniform(1,10) # 包含1，10的浮点数
+random.randint(1,10)  # 包含1，10的整数
+random.randrange(0,20,3) # 0-20能被3整除的数
+random.choice([1,2,3]) # 随机取元素
+random.choice(&quot;qwdwq&quot;) # 随机取元素
+random.shuffle([12,3,1,4,2,3]) # 混洗
+random.sample([1,2,3,4,5], 3) # 从前面的list中选3个
+</code></pre><h2 id="math"><a href="#math" class="headerlink" title="math"></a>math</h2><pre><code>import math
+dir(math) # 所有的math的功能
+</code></pre><h2 id="Counter"><a href="#Counter" class="headerlink" title="Counter"></a>Counter</h2><pre><code>字典的继承类
+set dict list tuple 作为key
+from collection import Counter # 导入
+cnt = Counter()
+for i in [1,1,2,2,2,3]:
+    cnt[i] += 1
+print cnt
+如果用key的话会报错先做第一次初始化才行
+cnt2 = Counter(alist)  #可以统计每个元素出现的次数（字符串，set,list,）
+Counter(cat=4,dogs=8,abc=-1) # 初始化counter次数，或者用dictionary构建
+Counter({&apos;cat&apos;:4,&apos;dogs&apos;:8,&apos;abc&apos;:-1})
+Counter返回一个字典，如果缺失的话会返回0
+del cnt2[&apos;xx&apos;]
+.values()
+list(cnt),set(cnt),dict(cnt) # 前两个只返回key
+cnt.most_common()[0] # 对出现次数排序
+cnt.clear()
+cnt1+cnt2 # 对于key相同的value做加法，如果为0则不保留
+cnt1-cnt2 # 对于key相同的value做减法
+&amp; # 求key相同value的最小值
+| # 求key相同value的最大值
+</code></pre><hr>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/08/03/JavaBasic/" rel="next" title="Java基本操作">
+                <i class="fa fa-chevron-left"></i> Java基本操作
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/03/15/ML-algrithom-usage/" rel="prev" title="scikit-learn ML 算法实践">
+                scikit-learn ML 算法实践 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/images/head.jpeg"
+                alt="WenchaoXiu" />
+            
+              <p class="site-author-name" itemprop="name">WenchaoXiu</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">9</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                
+                  <span class="site-state-item-count">7</span>
+                  <span class="site-state-item-name">分类</span>
+                
+              </div>
+            
+
+            
+
+          </nav>
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#conda环境以及包管理"><span class="nav-number">1.</span> <span class="nav-text">conda环境以及包管理</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#注释"><span class="nav-number">2.</span> <span class="nav-text">注释</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#变量"><span class="nav-number">3.</span> <span class="nav-text">变量</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#运算符"><span class="nav-number">4.</span> <span class="nav-text">运算符</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#数据类型（强类型）"><span class="nav-number">5.</span> <span class="nav-text">数据类型（强类型）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#输入输出操作"><span class="nav-number">6.</span> <span class="nav-text">输入输出操作</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#CSV处理"><span class="nav-number">7.</span> <span class="nav-text">CSV处理</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#列表"><span class="nav-number">8.</span> <span class="nav-text">列表</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#列表推倒式"><span class="nav-number">9.</span> <span class="nav-text">列表推倒式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#字符串"><span class="nav-number">10.</span> <span class="nav-text">字符串</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#元组"><span class="nav-number">11.</span> <span class="nav-text">元组</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#集合"><span class="nav-number">12.</span> <span class="nav-text">集合</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#字典"><span class="nav-number">13.</span> <span class="nav-text">字典</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#函数"><span class="nav-number">14.</span> <span class="nav-text">函数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#匿名函数"><span class="nav-number">15.</span> <span class="nav-text">匿名函数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#面向对象基础"><span class="nav-number">16.</span> <span class="nav-text">面向对象基础</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#异常处理"><span class="nav-number">17.</span> <span class="nav-text">异常处理</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#包模块"><span class="nav-number">18.</span> <span class="nav-text">包模块</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#main"><span class="nav-number">19.</span> <span class="nav-text">main</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#zip"><span class="nav-number">20.</span> <span class="nav-text">zip</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#enumerate"><span class="nav-number">21.</span> <span class="nav-text">enumerate</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#random"><span class="nav-number">22.</span> <span class="nav-text">random</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#math"><span class="nav-number">23.</span> <span class="nav-text">math</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Counter"><span class="nav-number">24.</span> <span class="nav-text">Counter</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; 2018 &mdash; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-car"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">WenchaoXiu</span>
+
+  
+</div>
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
