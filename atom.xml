@@ -37,6 +37,24 @@
   </entry>
   
   <entry>
+    <title>葫芦书读书笔记</title>
+    <link href="http://WenchaoXiu.github.io/2019/07/03/WaterMelonBook/"/>
+    <id>http://WenchaoXiu.github.io/2019/07/03/WaterMelonBook/</id>
+    <published>2019-07-03T09:49:19.000Z</published>
+    <updated>2019-07-03T09:59:47.000Z</updated>
+    
+    <content type="html"><![CDATA[<p class="description"></p><a id="more"></a><h2 id="1-为什么需要对数值特征进行归一化"><a href="#1-为什么需要对数值特征进行归一化" class="headerlink" title="1. 为什么需要对数值特征进行归一化"></a>1. 为什么需要对数值特征进行归一化</h2><figure class="highlight sqf"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">为了方便后续进行梯度下降的时候加速收敛</span><br><span class="line">归一化通常主要分为两种：<span class="built_in">min</span>-<span class="built_in">max</span>，Z-<span class="built_in">Score</span></span><br><span class="line">需要进行归一化的模型：线性回归，LR，SVM，神经网络</span><br><span class="line">树模型不需要进行归一化，因为叶节点生成不涉及到梯度下降</span><br></pre></td></tr></table></figure><hr>]]></content>
+    
+    <summary type="html">
+    
+      对葫芦书中一些算法题进行总结
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
     <title>Leetcode</title>
     <link href="http://WenchaoXiu.github.io/2019/05/13/Leetcode/"/>
     <id>http://WenchaoXiu.github.io/2019/05/13/Leetcode/</id>
