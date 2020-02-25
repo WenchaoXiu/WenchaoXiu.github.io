@@ -73,6 +73,8 @@
 
 
 
+  
+
 
   <link rel="alternate" href="/atom.xml" title="WenchaoXiu" type="application/atom+xml" />
 
@@ -81,17 +83,19 @@
 
 
 
-<meta name="description" content="最近在学习Git命令，这里记录了学习过程中的一些基本命令，2020.02.24更新">
+<meta name="description" content="Git基本使用">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Git命令学习">
 <meta property="og:url" content="http://WenchaoXiu.github.io/2020/02/24/git-learning/index.html">
 <meta property="og:site_name" content="WenchaoXiu">
-<meta property="og:description" content="最近在学习Git命令，这里记录了学习过程中的一些基本命令，2020.02.24更新">
+<meta property="og:description" content="Git基本使用">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2020-02-25T01:51:45.251Z">
+<meta property="og:image" content="http://wenchaoxiu.github.io/images/git_learning/gitzone.png">
+<meta property="og:updated_time" content="2020-02-25T02:36:14.292Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Git命令学习">
-<meta name="twitter:description" content="最近在学习Git命令，这里记录了学习过程中的一些基本命令，2020.02.24更新">
+<meta name="twitter:description" content="Git基本使用">
+<meta name="twitter:image" content="http://wenchaoxiu.github.io/images/git_learning/gitzone.png">
 
 
 
@@ -274,6 +278,28 @@
           </span>
 
           
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Git/" itemprop="url" rel="index">
+                    <span itemprop="name">Git</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
 
           
             
@@ -286,6 +312,10 @@
 
           
 
+          
+              <div class="post-description">
+                  Git基本使用
+              </div>
           
 
         </div>
@@ -330,7 +360,7 @@
 </li>
 </ol>
 <h3 id="git-暂存区工作区"><a href="#git-暂存区工作区" class="headerlink" title="git 暂存区工作区"></a>git 暂存区工作区</h3><ol>
-<li><p>工作目录，暂存区，版本历史</p>
+<li><p>工作目录，暂存区，版本历史<br><div style="width: 300px; margin: auto"><img src="/images/git_learning/gitzone.png" alt="Git区域"></div></p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 将"工作目录"下的文件加入"暂存区"。处于暂存区的文件可以被覆盖。</span></span><br><span class="line"><span class="comment"># git add 后面可以加多个文件及文件夹，空格隔开即可</span></span><br><span class="line">git add files</span><br><span class="line">git add -u <span class="comment"># 当对本地文件进行修改更新后，重新对所有已经加入暂存区的文件进行更新</span></span><br><span class="line"><span class="comment"># 将暂存区的文件作为历史版本提交</span></span><br><span class="line">git commit -m<span class="string">'xxx'</span></span><br></pre></td></tr></table></figure>
 </li>
 <li><p>暂存区的意义<br> 关于暂存区，有的人可能有以下疑问，一般情况下，我有什么代码上的改动，在本地实现完了之后，直接提交不就得了，问啥多此一举把在本地也能修改操作的文件提交到暂存区上？<br> 查阅相关资料，其实涉及到原子性提交这么一个问题，简单来说，原子性提交就是一次提交修改的内容，要么全都成功，要么全都失败，好处在于，将项目还原到某个时间点的版本十分容易。<br> 那么对于命令行的git来说，为了在命令行状态下实现这一操作，即出于某个目的对文件进行多次修改，并最终将对此修改一次性提交（防止每次修改都提交，难以回到之前某个稳定的版本），发明了”暂存区”这一概念。暂存区相当于一个对修改文件打包的作用，方便用户一次性提交修改内容。</p>
@@ -458,8 +488,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/06/02/Leetcode/" rel="next" title="Leetcode">
-                <i class="fa fa-chevron-left"></i> Leetcode
+              <a href="/2019/06/02/Leetcode/" rel="next" title="Leetcode代码记录">
+                <i class="fa fa-chevron-left"></i> Leetcode代码记录
               </a>
             
           </div>
@@ -558,7 +588,7 @@
               
               <div class="site-state-item site-state-categories">
                 
-                  <span class="site-state-item-count">8</span>
+                  <span class="site-state-item-count">7</span>
                   <span class="site-state-item-name">分类</span>
                 
               </div>
