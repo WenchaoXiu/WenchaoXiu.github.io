@@ -91,7 +91,7 @@
 <meta property="og:description" content="使用HIVE进行大体量数据的数据分析学习笔记">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://wenchaoxiu.github.io/2020/03/04/Hive-learning/Hive架构.png">
-<meta property="og:updated_time" content="2020-03-04T07:26:16.437Z">
+<meta property="og:updated_time" content="2020-03-04T07:30:41.720Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="HIVE命令学习">
 <meta name="twitter:description" content="使用HIVE进行大体量数据的数据分析学习笔记">
@@ -351,7 +351,7 @@
 <li>数据挖掘方面不擅长，特指ML（Machine Learning）算法之类的</li>
 <li>效率低，基于Hadoop来的</li>
 </ol>
-<h3 id="Hive架构"><a href="#Hive架构" class="headerlink" title="Hive架构"></a>Hive架构</h3><p>其中Meta store是存储相应的表与文件的相关信息的，包括文件大小，文件位置等等信息，存储在数据库中，默认是derby，后面可以换成MySQL。换句话说通过HQL语句转化为底层的MR语句，查询的元数据存在HDFS，原数据处于数据库中。</p>
+<h3 id="Hive架构"><a href="#Hive架构" class="headerlink" title="Hive架构"></a>Hive架构</h3><p>其中Meta store是存储相应的表与文件的相关信息的，包括文件大小，文件位置等等信息，存储在数据库中，默认是derby，后面可以换成MySQL。换句话说通过HQL语句转化为底层的MR语句，查询的原数据存在HDFS，元数据(meta data)处于数据库中。</p>
 <div style="width: 300px; margin: auto"><img src="Hive架构.png" alt="Hive架构"></div>
 
 
