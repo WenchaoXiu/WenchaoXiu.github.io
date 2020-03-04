@@ -90,12 +90,12 @@
 <meta property="og:site_name" content="WenchaoXiu">
 <meta property="og:description" content="使用HIVE进行大体量数据的数据分析学习笔记">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="evernotecid://851F6A24-DA03-431B-B408-A16A18BFE4A0/appyinxiangcom/4797059/ENResource/p1370">
-<meta property="og:updated_time" content="2020-03-04T06:08:49.129Z">
+<meta property="og:image" content="http://wenchaoxiu.github.io/2020/03/04/Hive-learning/Hive架构.png">
+<meta property="og:updated_time" content="2020-03-04T07:26:16.437Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="HIVE命令学习">
 <meta name="twitter:description" content="使用HIVE进行大体量数据的数据分析学习笔记">
-<meta name="twitter:image" content="evernotecid://851F6A24-DA03-431B-B408-A16A18BFE4A0/appyinxiangcom/4797059/ENResource/p1370">
+<meta name="twitter:image" content="http://wenchaoxiu.github.io/2020/03/04/Hive-learning/Hive架构.png">
 
 
 
@@ -336,7 +336,7 @@
 <!-- <img src="https://" alt="" style="width:100%" />
  -->
 <a id="more"></a>
-<h2 id="Hive简介"><a href="#Hive简介" class="headerlink" title="Hive简介"></a>Hive简介</h2><h3 id="Hive基本概念"><a href="#Hive基本概念" class="headerlink" title="Hive基本概念"></a>Hive基本概念</h3><ol>
+<h2 id="Hive简介"><a href="#Hive简介" class="headerlink" title="Hive简介"></a><font color="red">Hive简介</font></h2><h3 id="Hive基本概念"><a href="#Hive基本概念" class="headerlink" title="Hive基本概念"></a>Hive基本概念</h3><ol>
 <li>Hive是一个分析框架，区别于Hadoop，Hadoop是存储及分析框架，存储对应分布式管理系统HDFS，分析框架是MapReduce。是一个基于Hadoop的<strong>数据仓库工具</strong>，将结构化的业务数据映射为一张表，提供类SQL查询功能。</li>
 <li>本质是，将HQL转化为MapReduce程序，类似于Hadoop的一个客户端。<br> a. Hive处理的数据在HDFS中<br> b. 底层实现是MapReduce<br> c. 执行程序运行在Yarn上</li>
 </ol>
@@ -351,7 +351,10 @@
 <li>数据挖掘方面不擅长，特指ML（Machine Learning）算法之类的</li>
 <li>效率低，基于Hadoop来的</li>
 </ol>
-<h3 id="Hive架构"><a href="#Hive架构" class="headerlink" title="Hive架构"></a>Hive架构</h3><p>其中Meta store是存储相应的表与文件的相关信息的，包括文件大小，文件位置等等信息，存储在数据库中，默认是derby，后面可以换成MySQL。换句话说通过HQL语句转化为底层的MR语句，查询的元数据存在HDFS，原数据处于数据库中。<br><img src="evernotecid://851F6A24-DA03-431B-B408-A16A18BFE4A0/appyinxiangcom/4797059/ENResource/p1370" alt="41165fed73fab165480e5c7e76e57591.png"></p>
+<h3 id="Hive架构"><a href="#Hive架构" class="headerlink" title="Hive架构"></a>Hive架构</h3><p>其中Meta store是存储相应的表与文件的相关信息的，包括文件大小，文件位置等等信息，存储在数据库中，默认是derby，后面可以换成MySQL。换句话说通过HQL语句转化为底层的MR语句，查询的元数据存在HDFS，原数据处于数据库中。</p>
+<div style="width: 300px; margin: auto"><img src="Hive架构.png" alt="Hive架构"></div>
+
+
 <h3 id="Hive与数据库的比较"><a href="#Hive与数据库的比较" class="headerlink" title="Hive与数据库的比较"></a>Hive与数据库的比较</h3><ol>
 <li><strong>查询语言</strong>：类似</li>
 <li><strong>存储位置</strong>：Hive是Hadoop的HDFS中的，SQL是存储在本地中的。</li>
@@ -362,7 +365,7 @@
 <li><strong>可扩展性</strong>：Hive基于Hadoop，所以存储扩展和计算扩展都较高，MySQL也可扩展，但是相对来说扩展能力有限，最大100台</li>
 <li><strong>数据规模</strong>：相比较于MySQL来说可以支持很大规模的数据</li>
 </ol>
-<h2 id="Hive安装与配置"><a href="#Hive安装与配置" class="headerlink" title="Hive安装与配置"></a>Hive安装与配置</h2><h3 id="Hive安装"><a href="#Hive安装" class="headerlink" title="Hive安装"></a>Hive安装</h3><ol>
+<h2 id="Hive安装与配置"><a href="#Hive安装与配置" class="headerlink" title="Hive安装与配置"></a><font color="red">Hive安装与配置</font></h2><h3 id="Hive安装"><a href="#Hive安装" class="headerlink" title="Hive安装"></a>Hive安装</h3><ol>
 <li><a href="http://hive.apache.org/" target="_blank" rel="noopener"><strong>官网地址</strong></a></li>
 <li><a href="https://cwiki.apache.org/confluence/display/Hive/GettingStarted" target="_blank" rel="noopener"><strong>文档查看</strong></a></li>
 <li><a href="http://archive.apache.org/dist/hive/" target="_blank" rel="noopener"><strong>下载地址</strong></a></li>
@@ -377,9 +380,9 @@
 </ol>
 <h3 id="Hive交互命令"><a href="#Hive交互命令" class="headerlink" title="Hive交互命令"></a>Hive交互命令</h3><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">bin/hive -<span class="keyword">help</span> # 查看命令，主要有两个参数，-e，-f，前者是命令行，后者是文件</span><br><span class="line"><span class="keyword">bin</span>/hive -e <span class="string">"select * from aa;"</span> # 可以直接不进入Hive进行结果返回</span><br><span class="line"><span class="keyword">bin</span>/hive -f xx.hql &gt; xx.hql.result.txt # 将xx.hql命令中的结果写到xx.hql.result.txt中</span><br></pre></td></tr></table></figure>
 <h3 id="Hive其他命令"><a href="#Hive其他命令" class="headerlink" title="Hive其他命令"></a>Hive其他命令</h3><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">bin/hive # 启动hive</span><br><span class="line">dfs -ls /; # 查看hdfs里面文件内容</span><br><span class="line">! ls ./ # 本地文件内容</span><br></pre></td></tr></table></figure>
-<font color="gray" size="72">注：由于Hadoop没怎么接触过，有一些配置没太搞懂，后续需要重新学习</font>
+<font color="red">注：由于Hadoop没怎么接触过，有一些配置没太搞懂，后续需要重新学习</font>
 
-<h2 id="Hive-数据类型"><a href="#Hive-数据类型" class="headerlink" title="Hive 数据类型"></a>Hive 数据类型</h2><h3 id="基本数据类型"><a href="#基本数据类型" class="headerlink" title="基本数据类型"></a>基本数据类型</h3><ol>
+<h2 id="Hive-数据类型"><a href="#Hive-数据类型" class="headerlink" title="Hive 数据类型"></a><font color="red">Hive 数据类型</font></h2><h3 id="基本数据类型"><a href="#基本数据类型" class="headerlink" title="基本数据类型"></a>基本数据类型</h3><ol>
 <li>常用的有INT，BIGINT，DOUBLE，STRING，分别对应于java中int，long，double，string，大小写没关系，其中string理论上可以存到2G的数据</li>
 </ol>
 <h3 id="集合数据类型"><a href="#集合数据类型" class="headerlink" title="集合数据类型"></a>集合数据类型</h3><ol>
@@ -393,7 +396,7 @@
 <li>隐式类型转换<br> a. TINYINT -&gt; INT; INT -&gt; BIGINT<br> b. 整数类型、FLOAT、STRING -&gt; DOUBLE，注意STRING必须要是数值类型的<br> c. 整形除BIGINT -&gt; FLOAT<br> d. BOOLEAN不可转其他类型</li>
 <li>强转<br> a. cast(‘1’ as int)，得到int类型1<br> b. cast(‘x’ as int)，无法强转会失败，失败之后返回空值NULL</li>
 </ol>
-<h2 id="DDL数据定义"><a href="#DDL数据定义" class="headerlink" title="DDL数据定义"></a>DDL数据定义</h2><p><strong>Data Definition Language 数据定义语言，主要包括创建、修改、删除行为</strong></p>
+<h2 id="DDL数据定义"><a href="#DDL数据定义" class="headerlink" title="DDL数据定义"></a><font color="red">DDL数据定义</font></h2><p><strong>Data Definition Language 数据定义语言，主要包括创建、修改、删除行为</strong></p>
 <h3 id="数据库的增删改查"><a href="#数据库的增删改查" class="headerlink" title="数据库的增删改查"></a>数据库的增删改查</h3><h4 id="数据库的增"><a href="#数据库的增" class="headerlink" title="数据库的增"></a>数据库的增</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">create database hive; <span class="comment"># 创建数据库，其中hive也可以写成 库名.表名 这种形式，表示在库名下建某个表名</span></span><br><span class="line">create database <span class="keyword">if</span> not exists hive; <span class="comment"># 创建数据库，需要判断是否已经有该数据库了</span></span><br><span class="line">create database hive2 location <span class="string">'/hive2'</span> <span class="comment"># 在根目录下建一个hive2的数据库，之后建的表在/hive2文件夹中，文件名和库名可以不一样，不一样的时候默认是default</span></span><br><span class="line">use hive; <span class="comment"># 使用该数据库</span></span><br><span class="line">create table <span class="built_in">test</span>(id int) <span class="comment"># 在hive库中建test表，其中有一个字段叫做id类型是int型</span></span><br></pre></td></tr></table></figure>
 <h4 id="数据库的删"><a href="#数据库的删" class="headerlink" title="数据库的删"></a>数据库的删</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">drop database hive; <span class="comment"># 将空数据库hive删除</span></span><br><span class="line">drop database hive cascade; <span class="comment"># 当hive库中存在表的时候，上条命令无法直接删除，需要加cascade进行强删</span></span><br></pre></td></tr></table></figure>
 <h4 id="数据库的改"><a href="#数据库的改" class="headerlink" title="数据库的改"></a>数据库的改</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">alter database hive <span class="built_in">set</span> dbproperties(<span class="string">'createtime'</span>=<span class="string">'20200228'</span>) <span class="comment"># 注意，所谓对数据库的改动，是对数据库以key-value对加一些属性，但无法改变相应的数据库名称、数据库位置</span></span><br></pre></td></tr></table></figure>
@@ -449,7 +452,7 @@
 </li>
 </ol>
 <h4 id="表的删除"><a href="#表的删除" class="headerlink" title="表的删除"></a>表的删除</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">drop table <span class="built_in">test</span>;</span><br></pre></td></tr></table></figure>
-<h2 id="DML数据操作"><a href="#DML数据操作" class="headerlink" title="DML数据操作"></a>DML数据操作</h2><p><strong>Data Manipulation Language 数据操作语言，主要包括select，update，insert，delete等</strong></p>
+<h2 id="DML数据操作"><a href="#DML数据操作" class="headerlink" title="DML数据操作"></a><font color="red">DML数据操作</font></h2><p><strong>Data Manipulation Language 数据操作语言，主要包括select，update，insert，delete等</strong></p>
 <h3 id="数据的导入"><a href="#数据的导入" class="headerlink" title="数据的导入"></a>数据的导入</h3><ol>
 <li><p>load数据</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">load data [<span class="built_in">local</span>] inpath <span class="string">'/opt/module/datas/student.txt'</span> [overwrite] into table student [partition (partcol1=val1,…)]; <span class="comment"># local是本地导入，如果不写，远端HDFS导入；overwrite是覆盖，直接into是追加；partition是追加分区，追加的内容是写在表中靠上的位置的。</span></span><br></pre></td></tr></table></figure>
@@ -472,7 +475,7 @@
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">truncate table <span class="built_in">test</span>; <span class="comment"># 将原数据删除，保留元数据即表结构，因此只能操作内部表（管理表）</span></span><br></pre></td></tr></table></figure>
 </li>
 </ol>
-<h2 id="数据表查询"><a href="#数据表查询" class="headerlink" title="数据表查询"></a>数据表查询</h2><h3 id="基本查询"><a href="#基本查询" class="headerlink" title="基本查询"></a>基本查询</h3><h4 id="全表及特定列查询"><a href="#全表及特定列查询" class="headerlink" title="全表及特定列查询"></a>全表及特定列查询</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 查询全表</span></span><br><span class="line">select * from <span class="built_in">test</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment"># 特定列查询</span></span><br><span class="line">select id,name from <span class="built_in">test</span>;</span><br></pre></td></tr></table></figure>
+<h2 id="数据表查询"><a href="#数据表查询" class="headerlink" title="数据表查询"></a><font color="red">数据表查询</font></h2><h3 id="基本查询"><a href="#基本查询" class="headerlink" title="基本查询"></a>基本查询</h3><h4 id="全表及特定列查询"><a href="#全表及特定列查询" class="headerlink" title="全表及特定列查询"></a>全表及特定列查询</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 查询全表</span></span><br><span class="line">select * from <span class="built_in">test</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment"># 特定列查询</span></span><br><span class="line">select id,name from <span class="built_in">test</span>;</span><br></pre></td></tr></table></figure>
 <p><strong>规则：</strong><br><strong>1. 大小写不敏感</strong><br><strong>2. 可以一行也可多行</strong><br><strong>3. 关键字不能缩写不能分行</strong><br><strong>4. 字句一般分行写</strong><br><strong>5. 分号表明语句结束</strong></p>
 <h4 id="列别名"><a href="#列别名" class="headerlink" title="列别名"></a>列别名</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">select ename as name, dbid id from <span class="built_in">test</span>; <span class="comment"># 查询结果的列名改成需要的名字，as可加可不加</span></span><br></pre></td></tr></table></figure>
 <h4 id="算数运算符"><a href="#算数运算符" class="headerlink" title="算数运算符"></a>算数运算符</h4><p>运算符：+ - * / % &amp;  | ^ ~<br>分别是：加/减/乘/除，取余，按位与/或/异或/非<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">select id+1 from <span class="built_in">test</span>; <span class="comment">#加操作</span></span><br></pre></td></tr></table></figure></p>
@@ -546,7 +549,7 @@ b. 表名可以简化，简化的一个好处是提高效率，因为写明之�
 </tbody>
 </table>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">select </span><br><span class="line">    name ,subject, score,</span><br><span class="line">    rank() over(partition by subject order by score desc) rank1,</span><br><span class="line">    dense_rank() over(partition by subject order by score desc) rank2,</span><br><span class="line">    row_number() over(partition by subject order by score desc) rank3</span><br><span class="line">from </span><br><span class="line">    score; <span class="comment"># 分别使用三种函数</span></span><br><span class="line"><span class="comment"># 使用的场景：某个店铺访问前3的用户信息，通过rank得到用户排名，之后使用where对rank小于4的过滤即可。limit不好用于分区，一般用于整体。</span></span><br></pre></td></tr></table></figure>
-<h2 id="函数"><a href="#函数" class="headerlink" title="函数"></a>函数</h2><h3 id="系统内置函数"><a href="#系统内置函数" class="headerlink" title="系统内置函数"></a>系统内置函数</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">show <span class="built_in">functions</span>; <span class="comment"># 查看系统自带函数</span></span><br><span class="line">desc <span class="keyword">function</span> upper; <span class="comment"># 显示自带函数的用法</span></span><br><span class="line">desc <span class="keyword">function</span> extended upper; <span class="comment"># 详细的显示自带函数的用法</span></span><br></pre></td></tr></table></figure>
+<h2 id="函数"><a href="#函数" class="headerlink" title="函数"></a><font color="red">函数</font></h2><h3 id="系统内置函数"><a href="#系统内置函数" class="headerlink" title="系统内置函数"></a>系统内置函数</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">show <span class="built_in">functions</span>; <span class="comment"># 查看系统自带函数</span></span><br><span class="line">desc <span class="keyword">function</span> upper; <span class="comment"># 显示自带函数的用法</span></span><br><span class="line">desc <span class="keyword">function</span> extended upper; <span class="comment"># 详细的显示自带函数的用法</span></span><br></pre></td></tr></table></figure>
 <h3 id="自定义函数"><a href="#自定义函数" class="headerlink" title="自定义函数"></a>自定义函数</h3><blockquote>
 <p>自定义函数主要有三种类型：</p>
 <ol>
@@ -566,7 +569,7 @@ b. 表名可以简化，简化的一个好处是提高效率，因为写明之�
 </ol>
 </blockquote>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
-<h2 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h2><ol>
+<h2 id="其他"><a href="#其他" class="headerlink" title="其他"></a><font color="red">其他</font></h2><ol>
 <li><p>distinct与双group</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">双group去重可能会稍微快一点</span><br><span class="line"><span class="comment"># distinct</span></span><br><span class="line">select</span><br><span class="line">    shop,</span><br><span class="line">    count(distinct id) user_cnt</span><br><span class="line">from</span><br><span class="line">    visit</span><br><span class="line">group by </span><br><span class="line">    shop;</span><br><span class="line"></span><br><span class="line"><span class="comment"># 双group</span></span><br><span class="line">select </span><br><span class="line">    shop,</span><br><span class="line">    count(*) user_cnt</span><br><span class="line">form</span><br><span class="line">    (</span><br><span class="line">select </span><br><span class="line">    shop, id</span><br><span class="line">from</span><br><span class="line">    visit</span><br><span class="line">group by</span><br><span class="line">    shop,id)t1</span><br><span class="line">group by </span><br><span class="line">    shop;</span><br></pre></td></tr></table></figure>
 </li>
